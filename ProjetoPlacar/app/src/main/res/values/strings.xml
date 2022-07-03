@@ -1,4 +1,11 @@
 <resources>
     <string name="app_name">Projeto Placar</string>
-    <string name="fab_description">gerar e adicionar partida</string>
+    <string name="fab_description">gerate and add match</string>
+    <string name="flag_team_one">Flag team two</string>
+    <string name="team_one">Team One</string>
+    <string name="score_team_one">0</string>
+    <string name="vs">x</string>
+    <string name="team_2">Team Two</string>
+    <string name="score_team_two">0</string>
+    <string name="flag_team_two">Flag team two</string>
 </resources>
