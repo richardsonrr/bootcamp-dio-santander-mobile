@@ -3,7 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/margin"
+    >
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -11,9 +13,9 @@
 
         <ImageView
             android:id="@+id/im_team_one"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            android:layout_margin="16dp"
+            android:layout_width="@dimen/team_img_size"
+            android:layout_height="@dimen/team_img_size"
+            android:layout_margin="@dimen/margin"
             android:contentDescription="@string/flag_team_one"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -23,7 +25,7 @@
             android:id="@+id/tv_name_team_one"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="16dp"
+            android:padding="@dimen/margin"
             tools:text="@string/team_one"
             app:layout_constraintEnd_toEndOf="@+id/im_team_one"
             app:layout_constraintStart_toStartOf="@+id/im_team_one"
@@ -33,7 +35,7 @@
             android:id="@+id/tv_score_team_one"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="16dp"
+            android:padding="@dimen/margin"
             tools:text="@string/score_team_one"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
             app:layout_constraintBottom_toBottomOf="@+id/im_team_one"
@@ -43,18 +45,21 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="16dp"
+            android:padding="@dimen/margin"
             android:text="@string/vs"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
             app:layout_constraintBottom_toBottomOf="@id/im_team_two"
             app:layout_constraintStart_toEndOf="@+id/tv_score_team_one"
-            app:layout_constraintTop_toTopOf="@id/im_team_one" />
+            app:layout_constraintTop_toTopOf="@id/im_team_one"
+            app:layout_constraintEnd_toStartOf="@id/tv_score_team_two"
+
+            />
 
         <ImageView
             android:id="@+id/im_team_two"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            android:layout_margin="16dp"
+            android:layout_width="@dimen/team_img_size"
+            android:layout_height="@dimen/team_img_size"
+            android:layout_margin="@dimen/margin"
             android:contentDescription="@string/flag_team_two"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -64,7 +69,7 @@
             android:id="@+id/tv_name_team_two"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="16dp"
+            android:padding="@dimen/margin"
             tools:text="@string/team_2"
             app:layout_constraintEnd_toEndOf="@+id/im_team_two"
             app:layout_constraintStart_toStartOf="@+id/im_team_two"
@@ -74,7 +79,7 @@
             android:id="@+id/tv_score_team_two"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="16dp"
+            android:padding="@dimen/margin"
             tools:text="@string/score_team_two"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
             app:layout_constraintBottom_toBottomOf="@+id/im_team_two"
