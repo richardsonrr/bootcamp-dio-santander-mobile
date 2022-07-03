@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">ProjetoPlacar</string>
+    <string name="app_name">Projeto Placar</string>
+    <string name="fab_description">gerar e adicionar partida</string>
 </resources>
