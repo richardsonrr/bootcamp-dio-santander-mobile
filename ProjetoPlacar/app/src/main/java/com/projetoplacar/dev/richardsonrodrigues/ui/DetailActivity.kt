@@ -30,10 +30,5 @@ class DetailActivity : AppCompatActivity() {
         }
 
 
-
-
-
-
-
     }
 }
