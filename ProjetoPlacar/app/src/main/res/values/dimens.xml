@@ -3,4 +3,5 @@
     <dimen name="margin">16dp</dimen>
     <dimen name="team_img_size">120dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
+    <dimen name="app_bar_height">152dp</dimen>
 </resources>

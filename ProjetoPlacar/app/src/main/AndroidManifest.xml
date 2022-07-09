@@ -14,15 +14,20 @@
         android:theme="@style/Theme.ProjetoPlacar"
         tools:targetApi="31">
         <activity
-            android:name=".DetailActivity"
-            android:exported="false" />
+            android:name=".ui.DetailActivity"
+            android:exported="false"
+            android:theme="@style/Theme.ProjetoPlacar.NoactionBar"
+            android:label=""
+            />
         <activity
-            android:name=".MainActivity"
-            android:exported="true">
+            android:name=".ui.MainActivity"
+            android:exported="true"
+
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
+
             </intent-filter>
         </activity>
     </application>
