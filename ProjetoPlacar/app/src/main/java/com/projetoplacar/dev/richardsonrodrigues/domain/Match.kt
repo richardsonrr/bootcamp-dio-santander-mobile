@@ -11,4 +11,5 @@ data class Match(
     val teamOne: Team,
     @SerializedName("visitante")
     val teamTwo: Team
+
 )

@@ -1,5 +1,4 @@
 package com.projetoplacar.dev.richardsonrodrigues.ui
-
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
@@ -18,6 +17,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var dioApi: DioAPI
     private lateinit var binding: ActivityMainBinding
+    private lateinit var matchAdapter: MatchAdapter
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity() {
         setHTTPClient()
         setMatchList()
         setMatchRefresh()
-        //      setFAB()
+        setFAB()
 
     }
 
@@ -41,13 +41,28 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-
     private fun setFAB() {
-        TODO("Click simular as partidas")
+
+        binding.fabAddGames.setOnClickListener {
+
+            binding.fabAddGames.animate().rotationBy(360F).setDuration(500).start()
+            val matchsSize = matchAdapter.itemCount
+
+            for ( x in 0 until matchsSize){
+                val score = matchAdapter.getMatchList()[x]
+                score.teamOne.score = (0..score.teamOne.stars).random()
+                score.teamTwo.score = (0..score.teamTwo.stars).random()
+
+               matchAdapter.notifyItemChanged(x)
+
+            }
+
+        }
+
     }
 
     private fun setMatchRefresh() {
-        binding.slGames.setOnRefreshListener {findMatchesAPI()}
+        binding.slGames.setOnRefreshListener { findMatchesAPI() }
     }
 
     private fun setMatchList() {
@@ -61,9 +76,10 @@ class MainActivity : AppCompatActivity() {
         binding.slGames.isRefreshing = true
         dioApi.getMatch().enqueue(object : Callback<List<Match>> {
             override fun onResponse(call: Call<List<Match>>, response: Response<List<Match>>) {
-                if (response.isSuccessful) {
-                    var data = response.body()
-                    binding.rvGames.adapter = MatchAdapter(data!!)
+                if (response.isSuccessful && !response.body().isNullOrEmpty()) {
+                    val matchList = response.body()!!
+                    matchAdapter = MatchAdapter(matchList)
+                   binding.rvGames.adapter = matchAdapter
 
                 } else {
                     showErrorMsg()
