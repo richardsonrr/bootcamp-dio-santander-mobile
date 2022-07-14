@@ -26,9 +26,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         setHTTPClient()
         setMatchList()
-        // setMatchRefresh()
+        setMatchRefresh()
         //      setFAB()
-
 
     }
 
@@ -37,22 +36,29 @@ class MainActivity : AppCompatActivity() {
             .baseUrl("https://digitalinnovationone.github.io/matches-simulator-api/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
-
-
         dioApi = retrofit.create(DioAPI::class.java)
+
     }
+
+
 
     private fun setFAB() {
         TODO("Click simular as partidas")
     }
 
     private fun setMatchRefresh() {
-        TODO("Implementar atualização sas partidas com o refresh")
+        binding.slGames.setOnRefreshListener {findMatchesAPI()}
     }
 
     private fun setMatchList() {
         binding.rvGames.setHasFixedSize(true)
 
+        findMatchesAPI()
+
+    }
+
+    private fun findMatchesAPI() {
+        binding.slGames.isRefreshing = true
         dioApi.getMatch().enqueue(object : Callback<List<Match>> {
             override fun onResponse(call: Call<List<Match>>, response: Response<List<Match>>) {
                 if (response.isSuccessful) {
@@ -63,11 +69,12 @@ class MainActivity : AppCompatActivity() {
                     showErrorMsg()
                 }
             }
+
             override fun onFailure(call: Call<List<Match>>, t: Throwable) {
                 showErrorMsg()
             }
         })
-
+        binding.slGames.isRefreshing = false
     }
 
     private fun showErrorMsg() {

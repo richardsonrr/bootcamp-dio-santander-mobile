@@ -20,14 +20,7 @@ class DetailActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
          supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-        binding.toolbar.
-        setOnClickListener{
-            val mainActivity = Intent(this, MainActivity::class.java)
-            startActivity(mainActivity)
-            binding.toolbar.title = "Richardson"
 
-
-        }
 
 
     }
