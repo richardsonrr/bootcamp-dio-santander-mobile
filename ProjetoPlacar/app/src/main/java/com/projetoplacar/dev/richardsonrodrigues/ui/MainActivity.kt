@@ -7,6 +7,7 @@ import com.google.android.material.snackbar.Snackbar
 import com.projetoplacar.dev.richardsonrodrigues.DATA.DioAPI
 import com.projetoplacar.dev.richardsonrodrigues.databinding.ActivityMainBinding
 import com.projetoplacar.dev.richardsonrodrigues.domain.Match
+import com.projetoplacar.dev.richardsonrodrigues.ui.adapter.MatchAdapter
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -14,8 +15,10 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 class MainActivity : AppCompatActivity() {
+
     private lateinit var dioApi: DioAPI
     private lateinit var binding: ActivityMainBinding
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,8 +26,9 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         setHTTPClient()
         setMatchList()
-//        setMatchRefresh()
-  //      setFAB()
+        // setMatchRefresh()
+        //      setFAB()
+
 
     }
 
@@ -47,16 +51,18 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setMatchList() {
+        binding.rvGames.setHasFixedSize(true)
+
         dioApi.getMatch().enqueue(object : Callback<List<Match>> {
             override fun onResponse(call: Call<List<Match>>, response: Response<List<Match>>) {
-                if(response.isSuccessful){
+                if (response.isSuccessful) {
                     var data = response.body()
-                    Log.i("dados","Deu certo ")
-                }else{
+                    binding.rvGames.adapter = MatchAdapter(data!!)
+
+                } else {
                     showErrorMsg()
                 }
             }
-
             override fun onFailure(call: Call<List<Match>>, t: Throwable) {
                 showErrorMsg()
             }
@@ -65,8 +71,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun showErrorMsg() {
-        Log.i("dados","Nao foi possivel concectar a APi")
-        Snackbar.make(binding.fabAddGames,"Error conecting API",Snackbar.LENGTH_LONG).show()
+        Log.i("dados", "Nao foi possivel concectar a APi")
+        Snackbar.make(binding.fabAddGames, "Error conecting API", Snackbar.LENGTH_LONG).show()
     }
 
 
