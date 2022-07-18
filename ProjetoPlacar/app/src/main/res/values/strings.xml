@@ -8,4 +8,8 @@
     <string name="team_2">Team Two</string>
     <string name="score_team_two">0</string>
     <string name="flag_team_two">Flag team two</string>
+    <string name="empate"> Tied </string>
+    <string name="win_team"> Win </string>
+
+
 </resources>

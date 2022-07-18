@@ -1,4 +1,5 @@
 package com.projetoplacar.dev.richardsonrodrigues.ui
+
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
@@ -24,12 +25,14 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
         setHTTPClient()
         setMatchList()
         setMatchRefresh()
         setFAB()
 
     }
+
 
     private fun setHTTPClient() {
         val retrofit = Retrofit.Builder()
@@ -40,7 +43,6 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-
     private fun setFAB() {
 
         binding.fabAddGames.setOnClickListener {
@@ -48,12 +50,12 @@ class MainActivity : AppCompatActivity() {
             binding.fabAddGames.animate().rotationBy(360F).setDuration(500).start()
             val matchsSize = matchAdapter.itemCount
 
-            for ( x in 0 until matchsSize){
+            for (x in 0 until matchsSize) {
                 val score = matchAdapter.getMatchList()[x]
                 score.teamOne.score = (0..score.teamOne.stars).random()
                 score.teamTwo.score = (0..score.teamTwo.stars).random()
 
-               matchAdapter.notifyItemChanged(x)
+                matchAdapter.notifyItemChanged(x)
 
             }
 
@@ -76,18 +78,20 @@ class MainActivity : AppCompatActivity() {
         binding.slGames.isRefreshing = true
         dioApi.getMatch().enqueue(object : Callback<List<Match>> {
             override fun onResponse(call: Call<List<Match>>, response: Response<List<Match>>) {
-                if (response.isSuccessful && !response.body().isNullOrEmpty()) {
-                    val matchList = response.body()!!
-                    matchAdapter = MatchAdapter(matchList)
-                   binding.rvGames.adapter = matchAdapter
+                if (response.isSuccessful) {
+                    val matchList = response.body()
+                    matchAdapter = MatchAdapter(matchList!!)
+                    binding.rvGames.adapter = matchAdapter
 
                 } else {
                     showErrorMsg()
+
                 }
             }
 
             override fun onFailure(call: Call<List<Match>>, t: Throwable) {
                 showErrorMsg()
+
             }
         })
         binding.slGames.isRefreshing = false

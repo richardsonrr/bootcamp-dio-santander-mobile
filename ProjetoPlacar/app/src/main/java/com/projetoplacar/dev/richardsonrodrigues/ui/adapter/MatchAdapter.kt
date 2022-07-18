@@ -1,11 +1,13 @@
 package com.projetoplacar.dev.richardsonrodrigues.ui.adapter
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.projetoplacar.dev.richardsonrodrigues.databinding.LayoutCardViewBinding
 import com.projetoplacar.dev.richardsonrodrigues.domain.Match
+import com.projetoplacar.dev.richardsonrodrigues.ui.DetailActivity
 
 class MatchAdapter(private val matchList: List<Match>) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
@@ -41,6 +43,14 @@ fun  getMatchList(): List<Match>{
 
         binding.tvScoreTeamOne.text = match.teamOne.score.toString()
         binding.tvScoreTeamTwo.text = match.teamTwo.score.toString()
+
+        holder.itemView.setOnClickListener{
+            val detailMatchIntente = Intent(context,DetailActivity::class.java)
+            detailMatchIntente.putExtra(DetailActivity.Extras.MATCH, match)
+
+            context.startActivity(detailMatchIntente)
+        }
+
     }
     override fun getItemCount(): Int {
         return matchList.size

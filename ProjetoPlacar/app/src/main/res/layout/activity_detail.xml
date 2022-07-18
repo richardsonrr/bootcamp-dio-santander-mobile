@@ -59,6 +59,19 @@
                 android:layout_height="wrap_content"
                 >
 
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/win_team"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_team_one"
+                    android:textAlignment="center"
+                    android:textSize="20pt"
+
+                    />
+
                 <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/im_team_one"
                     android:layout_width="@dimen/team_img_size"
@@ -129,7 +142,7 @@
                     app:layout_constraintTop_toTopOf="@+id/im_team_one" />
 
                 <androidx.appcompat.widget.AppCompatImageView
-                    android:id="@+id/iv_team_two"
+                    android:id="@+id/im_team_two"
                     android:layout_width="@dimen/team_img_size"
                     android:layout_height="@dimen/team_img_size"
                     android:layout_marginTop="@dimen/margin"
@@ -139,14 +152,14 @@
                     tools:srcCompat="@tools:sample/avatars" />
 
                 <androidx.appcompat.widget.AppCompatRatingBar
-                    android:id="@+id/rbAwayTeamStars"
+                    android:id="@+id/rb_team_two"
                     style="@style/Widget.AppCompat.RatingBar.Small"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/margin"
-                    app:layout_constraintEnd_toEndOf="@+id/iv_team_two"
-                    app:layout_constraintStart_toStartOf="@+id/iv_team_two"
-                    app:layout_constraintTop_toBottomOf="@+id/iv_team_two" />
+                    app:layout_constraintEnd_toEndOf="@+id/im_team_two"
+                    app:layout_constraintStart_toStartOf="@+id/im_team_two"
+                    app:layout_constraintTop_toBottomOf="@+id/im_team_two" />
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/tv_team_two"
@@ -154,9 +167,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/margin"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                    app:layout_constraintEnd_toEndOf="@+id/iv_team_two"
-                    app:layout_constraintStart_toStartOf="@+id/iv_team_two"
-                    app:layout_constraintTop_toBottomOf="@+id/rbAwayTeamStars"
+                    app:layout_constraintEnd_toEndOf="@+id/im_team_two"
+                    app:layout_constraintStart_toStartOf="@+id/im_team_two"
+                    app:layout_constraintTop_toBottomOf="@+id/rb_team_two"
                     tools:text="@string/team_2" />
 
                 <com.google.android.material.textview.MaterialTextView
@@ -165,10 +178,10 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                    app:layout_constraintBottom_toBottomOf="@+id/iv_team_two"
-                    app:layout_constraintEnd_toStartOf="@+id/iv_team_two"
+                    app:layout_constraintBottom_toBottomOf="@+id/im_team_two"
+                    app:layout_constraintEnd_toStartOf="@+id/im_team_two"
                     app:layout_constraintStart_toEndOf="@+id/tvVersus"
-                    app:layout_constraintTop_toTopOf="@+id/iv_team_two"
+                    app:layout_constraintTop_toTopOf="@+id/im_team_two"
                     tools:text="99" />
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.core.widget.NestedScrollView>
