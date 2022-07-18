@@ -8,7 +8,7 @@ Repositório referente a códigos do Santander Bootcamp 2022.
   <b>Tecnoligias:</b> Kotlin, Material Design, Retrofit, Glide.
   <br>
   <br>
-<b>Projeto ainda em execução, Download do Apk  a baixo</b>
+<b>Projeto ainda em execução, Download do Apk  a baixo.</b>
 <br>
 
   <a href="https://github.com/richardsonrr/bootcamp-dio-santander-mobile/raw/master/ProjetoPlacar/APK/app-debug.apk" target="_blank"><img src="https://user-images.githubusercontent.com/71666036/179619386-202e4079-d267-49f2-b8de-99e9188d92d6.png" target="_blank"></a> 
