@@ -1,6 +1,13 @@
 <resources>
     <string name="app_name">RR Sport News</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_news">News</string>
+    <string name="title_favorites">Favorites</string>
+    <string name="content_description_media">image media</string>
+    <string name="title">Title</string>
+    <string name="secondary_text">secondary text</string>
+    <string name="supporting_text">suporting text</string>
+    <string name="action_1">Button One</string>
+    <string name="action_2">Button Two</string>
+    <string name="material_button_description_content1">button description one </string>
+    <string name="material_button_description_content2">button description two</string>
 </resources>
