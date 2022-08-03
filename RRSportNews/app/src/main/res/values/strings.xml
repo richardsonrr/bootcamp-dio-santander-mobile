@@ -6,8 +6,7 @@
     <string name="title">Title</string>
     <string name="secondary_text">secondary text</string>
     <string name="supporting_text">suporting text</string>
-    <string name="action_1">Button One</string>
-    <string name="action_2">Button Two</string>
+    <string name="action_1">Open Link</string>
     <string name="material_button_description_content1">button description one </string>
     <string name="material_button_description_content2">button description two</string>
 </resources>

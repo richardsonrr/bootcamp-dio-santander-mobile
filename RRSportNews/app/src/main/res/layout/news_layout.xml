@@ -17,6 +17,7 @@
 
         <!-- Media -->
         <ImageView
+            android:id="@+id/iv_news"
             android:layout_width="match_parent"
             android:layout_height="194dp"
             android:contentDescription="@string/content_description_media"
@@ -66,16 +67,17 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:ignore="DuplicateSpeakableTextCheck,RedundantDescriptionCheck"
-                tools:text="@string/action_1" />
+                android:text="@string/action_1" />
 
             <ImageButton
 
                 android:id="@+id/btn_favorite"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:backgroundTint="#0000"
+                android:background="?android:selectableItemBackgroundBorderless"
                 android:clickable="true"
                 android:focusable="true"
+                android:padding="8dp"
                 android:src="@drawable/ic_baseline_favorite_border_24"
                 app:layout_constraintBottom_toBottomOf="@id/materialButton"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -86,7 +88,9 @@
                 android:id="@+id/btn_share"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:backgroundTint="#0000"
+                android:background="?android:selectableItemBackgroundBorderless"
+                android:padding="8dp"
+                android:layout_marginEnd="5dp"
                 android:clickable="true"
                 android:focusable="true"
                 android:src="@drawable/ic_baseline_share_24"
