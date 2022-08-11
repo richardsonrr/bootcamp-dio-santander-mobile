@@ -69,15 +69,15 @@
                 tools:ignore="DuplicateSpeakableTextCheck,RedundantDescriptionCheck"
                 android:text="@string/action_1" />
 
-            <ImageButton
+            <ImageView
 
                 android:id="@+id/btn_favorite"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="?android:selectableItemBackgroundBorderless"
                 android:clickable="true"
                 android:focusable="true"
                 android:padding="8dp"
+                android:background="?android:selectableItemBackgroundBorderless"
                 android:src="@drawable/ic_baseline_favorite_border_24"
                 app:layout_constraintBottom_toBottomOf="@id/materialButton"
                 app:layout_constraintEnd_toEndOf="parent"

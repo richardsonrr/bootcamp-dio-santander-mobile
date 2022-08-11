@@ -9,9 +9,9 @@ import com.projetoplacar.dev.richardsonrodrigues.databinding.LayoutCardViewBindi
 import com.projetoplacar.dev.richardsonrodrigues.domain.Match
 import com.projetoplacar.dev.richardsonrodrigues.ui.DetailActivity
 
-class MatchAdapter(private val matchList: List<Match>) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class MatchAdapter(private val matchList: List<Match>?) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
-fun  getMatchList(): List<Match>{
+fun  getMatchList(): List<Match>? {
     return matchList
 }
 
@@ -29,20 +29,22 @@ fun  getMatchList(): List<Match>{
         return ViewHolder(binding)
     }
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        val match = matchList[position]
+        val match = matchList?.get(position)
+
+
 
 
         //context para passar ao Glide
         val context = holder.itemView.context
-        binding.tvDescription.text = match.description
-        binding.tvNameTeamOne.text = match.teamOne.name
-        binding.tvNameTeamTwo.text = match.teamTwo.name
+        binding.tvDescription.text = match?.description
+        binding.tvNameTeamOne.text = match?.teamOne?.name
+        binding.tvNameTeamTwo.text = match?.teamTwo?.name
 
-        Glide.with(context).load(match.teamOne.img).circleCrop().into(binding.imTeamOne)
-        Glide.with(context).load(match.teamTwo.img).circleCrop().into(binding.imTeamTwo)
+        Glide.with(context).load(match?.teamOne?.img).circleCrop().into(binding.imTeamOne)
+        Glide.with(context).load(match?.teamTwo?.img).circleCrop().into(binding.imTeamTwo)
 
-        binding.tvScoreTeamOne.text = match.teamOne.score.toString()
-        binding.tvScoreTeamTwo.text = match.teamTwo.score.toString()
+        binding.tvScoreTeamOne.text = match?.teamOne?.score.toString()
+        binding.tvScoreTeamTwo.text = match?.teamTwo?.score.toString()
 
         holder.itemView.setOnClickListener{
             val detailMatchIntente = Intent(context,DetailActivity::class.java)
@@ -53,7 +55,8 @@ fun  getMatchList(): List<Match>{
 
     }
     override fun getItemCount(): Int {
-        return matchList.size
+        return matchList!!.size
+
     }
 
 }

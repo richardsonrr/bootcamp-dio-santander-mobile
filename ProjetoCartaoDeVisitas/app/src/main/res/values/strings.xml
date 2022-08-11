@@ -2,4 +2,8 @@
     <string name="app_name">ProjetoCartaoDeVisita</string>
     <string name="cartoes_visita">Cartões de Visita</string>
     <string name="floating_action_button_add_card">Floating Action button Add card</string>
+    <string name="name_business_card">Name Business Card</string>
+    <string name="contact">contact</string>
+    <string name="email">contact@email.com</string>
+    <string name="company">Company</string>
 </resources>
