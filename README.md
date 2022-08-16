@@ -3,7 +3,7 @@ Repositório referente a códigos do Santander Bootcamp 2022.
 <br>
 <br>
 <div>
-<h2  href="https://github.com/richardsonrr/bootcamp-dio-santander-mobile/tree/master/ProjetoPlacar">Simulador de Partidas</h2>
+<h2>ProjetoPlacar</h2>
   <b>Sobre:</b> <i>Projeto criado durante o BootCamp Santander feito pela DIO, o app tem o objetivo simular partidas de jogos consumindo uma API com Retrofit, e usando o Glide para gerenciamento de Imgs.</i> <br>
   <b>Tecnoligias:</b> Kotlin, Material Design, Retrofit, Glide.
   <br>
